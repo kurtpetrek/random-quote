@@ -1,10 +1,13 @@
+// No https these apis are http only
+// reload with http to work
+
 var start = true,
     previousBackground,
     backgroundArray = [],
     numOfImg = 15;
 
 for (var x = 0; x < numOfImg; x++ ){
-    backgroundArray.push("url\(images/bg" + x + ".jpg\)")
+    backgroundArray.push("url\(http://kurtpetrek.com/random/images/bg" + x + ".jpg\)")
   }
 
 function getRandomInt(min, max) {
@@ -16,7 +19,7 @@ function getQuote() {
   $.getJSON(requestURL, {
     'method': 'getQuote',
     'format': 'jsonp',
-    'key': 40582,
+    'key': 87812,
     'lang': 'en',
     'jsonp': 'displayData'
   });
@@ -103,6 +106,4 @@ $(function () {
     setBackgroundImage(false);
     getQuote();
   });
-
-
 });
